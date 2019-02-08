@@ -12,6 +12,15 @@ h1{
 	font-weight:bold;/*文字の太さを太く*/
 	margin:0;/*余白をなくす*/
 }
+@font-face {
+	font-family: 'MyFont';
+	src: url(moechat_font/ヒラギノ丸ゴ ProN W4.ttc);
+}
+p{
+	font-size:18px;/*文字の大きさを18pxに*/
+	font-family: MyFont;
+	font-weight: bold;
+}
 .align-right {/*右寄せ*/
 	text-align:right;
 }
@@ -51,4 +60,19 @@ table{
     position: absolute;
     right: 850px;
     bottom: 155px;
+}
+.box_left {
+    width:200px;
+    height:100px;
+    margin-left:10px;
+    float:left;
+}
+.box_wrap {
+    width:500px;
+    height:auto;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
 }
