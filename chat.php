@@ -18,7 +18,7 @@
  
  
 <form method="post" action="chat.php">
-        おおおおお名前　　　　<input type="text" name="name">
+        め名前　　　　<input type="text" name="name">
         メッセージ　<input type="text" name="message">
  
         <button name="send" type="submit">送信</button>
