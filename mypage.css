@@ -16,10 +16,11 @@ h1{
 	font-family: 'MyFont';
 	src: url(moechat_font/ヒラギノ丸ゴ ProN W4.ttc);
 }
-p{
+tr{
 	font-size:18px;/*文字の大きさを18pxに*/
 	font-family: MyFont;
 	font-weight: bold;
+	color:#54ff08;/*文字の色を緑に*/
 }
 .align-right {/*右寄せ*/
 	text-align:right;
@@ -65,6 +66,12 @@ table{
     width:200px;
     height:100px;
     margin-left:10px;
+    float:left;
+}
+.box_right {
+    width:200px;
+    height:100px;
+    margin-left:80%;
     float:left;
 }
 .box_wrap {
