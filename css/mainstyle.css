@@ -1,6 +1,37 @@
 @charset "utf-8";
 /* CSS Document */
 
+
+.createroom{
+    width: 200px;
+    height: 40px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: pink;
+}
+
+.mypage{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: skyblue;
+}
+
+.myname{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.room{
+    background-color: pink;
+}
+
+
+/* ここから下はテンプレ */
+
 body{
 font: 14px/1.6 "Hiragino Kaku Gothic Pro",Osaka,"メイリオ","ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
 margin:0;
