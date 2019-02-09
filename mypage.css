@@ -1,17 +1,20 @@
-@charset “shift_Jis”;
+@charset "shift_Jis";
 
 * {
 	font-family : "メイリオ",Merino,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic ProW3">
 
-	<!--文字サイズ、色、余白などをリセット-->
 	font-size : 12px;
-	color : #666666;
+	font-weight : bold;
+	color : #00FF00;
 	margin : 0;
 	padding : 0;
 
-	border : dotted 1px #FF6600;
+	/*border : dotted 1px #FF6600;/*ガイドライン*/
 }
 
+.align-right {/*右寄せ*/
+	text-align:right;
+}
 table {
 	table-layout : auto;
 	border-collapse : collapse;
@@ -35,7 +38,7 @@ th,td {
 	text-align : left;
 }
 
-div#header {
+header {
 	width : 700;
-	padding : 10px 10px 0 10px;
+	padding : 10px 1px 10px 1px;
 }
