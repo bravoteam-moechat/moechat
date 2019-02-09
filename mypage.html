@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+<form action="のちほど" method="post">
 
 <div class="container">
 	<header>
@@ -34,14 +34,14 @@
 		</div>
 	</header>
 </div><!--container1-->
-<div class="container">
+<div class="container align-center">
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-6 align-center">
 				<button type="reset">
 					<IMG src="mypage_image/camera_icon.png">
 				</button>
 			</div>
-			<div class="col-sm-6 align-center">
+			<div class="col-sm-6">
 			    <table>
 					<tr>
 						<td>ID</td>
@@ -49,15 +49,30 @@
 					</tr>
 					<tr>
 						<td>名前</td>
-						<td>名前をひっぱる</td>
+						<td>
+							<input type="text" value="" placeholder="DBから受け取った名前" >
+						</td>
+						<td>
+							<input type='submit' value='変更'>
+						</td>
 					</tr>
 					<tr>
 						<th>ユーザー名</th>
-						<td>ユーザー名をひっぱる</td>
+						<td>
+							<input type="text" value="" placeholder="DBから受け取ったユーザー名" >
+						</td>
+						<td>
+							<input type='submit' value='変更'>
+						</td>
 					</tr>
 					<tr>
 						<td>PASS</td>
-						<td>PASSをひっぱる</td>
+						<td>
+							<input type="password" value="" placeholder="DBから受け取ったPASS" >
+						</td>
+						<td>
+							<input type="button" onclick= "location.href='リンク先url'" value="変更">
+						</td>
 					</tr>
 					<tr>
 						<td>性別</td>
@@ -70,6 +85,9 @@
 					<tr>
 						<td>ポイント</td>
 						<td>ポイントをひっぱる</td>
+						<td>
+							<input type="button" onclick= "location.href='リンク先url'" value="課金">
+						</td>
 					</tr>
 				</table>
 

@@ -15,7 +15,13 @@
 .align-right {/*右寄せ*/
 	text-align:right;
 }
+
+.align-center {/*中央寄せ*/
+	text-align:center;
+}
+
 table {
+	font-size : 20px;
 	table-layout : auto;
 	border-collapse : collapse;
 	margin : 10px 5px 20px 5px;
@@ -27,18 +33,15 @@ th,td {
 }
 
 #container {
-	width : 705px;
 	margin : 0 auto 0;
 	text-align : center;
 }
 
 #contents {
-	width : 700;
 	margin : 0 auto 0;
 	text-align : left;
 }
 
 header {
-	width : 700;
 	padding : 10px 1px 10px 1px;
 }
