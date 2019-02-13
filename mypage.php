@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -31,13 +31,30 @@ $ID = $_SESSION['user_id'];
 
 mysql_set_charset('utf8');
 
+$name;
+$username;
+$pass;
+$sex;
+$birthbay;
+$point;
 
 
 try {
     $result = mysql_query("SELECT * FROM moechat WHERE ID = :ID");
+    $result->bindValue(':ID', $ID, PDO::PARAM_INT);
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }
+
+foreach ($result as $row) {
+    //配列に入れる
+        $name = $row['name'];
+        $username = $row['username'];
+        $pass = $row['pass'];
+        $sex = $row['sex'];
+        $birthbay = $row['birthbay'];
+        $point = $row['point'];
+    }
 
 ?>
 
@@ -65,12 +82,12 @@ try {
 			<table>
 				<tr>
 					<td>ID</td>
-					<td><?php print(htmlspecialchars($result['id']));?></td>
+					<td><?php print($ID);?></td>
 				</tr>
 				<tr>
 					<td>名前</td>
 					<td>
-						<input type="text" value="" placeholder="<?php print(htmlspecialchars($result['name']));?>" >
+						<input type="text" value="" placeholder="<?php print($name);?>" >
 					</td>
 					<td>
 						<input type='submit' value='変更'>
@@ -79,7 +96,7 @@ try {
 				<tr>
 					<th>ユーザー名</th>
 					<td>
-						<input type="text" value="" placeholder="<?php print(htmlspecialchars($result['username']));?>" >
+						<input type="text" value="" placeholder="<?php print($name);?>" >
 					</td>
 					<td>
 						<input type='submit' value='変更'>
@@ -88,7 +105,7 @@ try {
 				<tr>
 					<td>PASS</td>
 					<td>
-						<input type="password" value="" placeholder="<?php print(htmlspecialchars($result['pass']));?>" >
+						<input type="password" value="" placeholder="<?php print($username);?>" >
 					</td>
 					<td>
 						<input type="button" onclick= "location.href='リンク先url'" value="変更">
@@ -96,15 +113,15 @@ try {
 				</tr>
 				<tr>
 					<td>性別</td>
-					<td><?php print(htmlspecialchars($result['sex']));?></td>
+					<td><?php print($sex);?></td>
 				</tr>
 				<tr>
 					<td>生年月日</td>
-					<td><?php print(htmlspecialchars($result['birthday']));?></td>
+					<td><?php print($birthday);?></td>
 				</tr>
 				<tr>
 					<td>ポイント</td>
-					<td><?php print(htmlspecialchars($result['point']));?></td>
+					<td><?php print($point);?></td>
 					<td>
 						<input type="button" onclick= "location.href='リンク先url'" value="課金">
 					</td>
