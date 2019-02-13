@@ -40,8 +40,9 @@ $point;
 
 
 try {
-    $result = mysql_query("SELECT * FROM moechat WHERE ID = :ID");
-    $result->bindValue(':ID', $ID, PDO::PARAM_INT);
+    $sql = mysql_query("SELECT * FROM moechat WHERE ID = :ID");
+    $sql->bindValue(':ID', $ID, PDO::PARAM_INT);
+    $result = $sql->execute();
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }
