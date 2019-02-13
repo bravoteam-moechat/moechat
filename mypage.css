@@ -1,10 +1,10 @@
 @charset "shift_Jis";
 
 * {
-	font-family : "メイリオ",Merino,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic ProW3">
-
-	font-size : 12px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size : 20px;
 	font-weight : bold;
+	background-color:green;
 	color : #00FF00;
 	margin : 0;
 	padding : 0;
@@ -20,6 +20,19 @@
 	text-align:center;
 }
 
+.box1 {
+  float: left;
+}
+.box2 {
+  float: right;
+}
+.box3 {
+  float: left;
+}
+.box4 {
+  float: right;
+  width: auto;
+}
 table {
 	font-size : 20px;
 	table-layout : auto;
@@ -32,16 +45,11 @@ th,td {
 	text-align : left;
 }
 
-#container {
-	margin : 0 auto 0;
+.container {
+	margin : 20px 0 20px 0;
 	text-align : center;
 }
 
-#contents {
-	margin : 0 auto 0;
-	text-align : left;
-}
-
-header {
-	padding : 10px 1px 10px 1px;
+img {/*画像の角をまるく*/
+    border-radius: 10px;
 }
