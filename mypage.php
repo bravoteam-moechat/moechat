@@ -55,7 +55,6 @@ foreach ($result as $row) {
         $birthbay = $row['birthbay'];
         $point = $row['point'];
     }
-
 ?>
 
 <form action="のちほど" method="post">
@@ -68,7 +67,7 @@ foreach ($result as $row) {
 			</a>
 		</div>
 		<div class="box2">
-				<a href="index.html">ログアウト</a>
+				<a href="index.html">ログアウト<?php $ID = null;?></a>
 		</div>
 
 </div><!--container1-->
