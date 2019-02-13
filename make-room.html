@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width">
-		<title>チャットルーム作成</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>チャットの作成</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"crossorigin="anonymous">
 <!-- Optional theme -->
@@ -11,56 +11,67 @@
 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
 integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
 crossorigin="anonymous">
-		<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/make-room-style.css">
 </head>
 <body>
-
 <div class="container">
+<div class="content">
+	<br>
+	<!-- <br> -->
 	<h1>チャットルーム作成</h1>
-	<h3>部屋を新規作成してください</h3>
-<div class="row">
 
-	<div class="col-sm-6">
+	<h3>内容を入力して新し部屋を作ましょう</h3>
+	<br>
+</div>
+<div class="row">
+	<div class="col-md-6">
 		<div class="control">
 			<label for="roomtext">チャットルーム名:
-				<span class="required">必須</span></label>
-			<input id="roomtext" type="text" name="roomtext" value="チャットルーム">
+				<!-- <span class="required">必須</span></label> -->
+			<input id="roomtext" type="text" name="roomtext" value="チャットルーム1">
 		</div>
 		<div class="control">
 			<label for="timecode">時間:
-				<span class="required">必須</span></label>
-			<input id="timecode" type="time" name="timecode" min="00:05:00" max="01:00:00" value="00:05:00">
+			<input id="timecode" type="time" name="timecode" min="05:00" max="00:00" value="15:00">
 		</div>
 		<div class="control">
-			<label for="passcode">パスワード:
-				<span class="required">必須</span></label>
-			<input id="passcode" type="password" name="passcode" value="パスワード">
+			<label for="passcode">入室パスワード:
+			<input id="passcode" type="password" name="passcode" value="12345678">
+		</div>
+		<div class="control">
+			<label for="commente">コメント:
+			<input id="comment" type="textarea" name="comment" value="○○について">
 		</div>
 		<div class="control2">
-			<button class="btn" type="submit">作成</button>
+			<button class="btn-info btn-sm" type="submit">決定</button>
 		</div>
+			<br>
 	</div>
-
-	<div class="col-sm-6">
+		<br>
+	<div class="col-md-6">
 		<div class="control3">
-		<div id="box">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<p>詳細情報</p>
-			<br>
-			<br>
-			<br>
-			<button onclick="location.href='./main.html'">戻る</button>
-			<button onclick="location.href='./main.html'">決定</button>
+			<div id="box">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p>詳細情報</p>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
 		</div>
+		<div class="control2">
+			<p>この内容で作成しますか？</p>
+			<button class="btn-sm btn-default" onclick="location.href='./main.html'">戻る</button>
+			<button class="btn-sm btn-success" onclick="location.href='./main.html'">作成</button>
+				<br>
 		</div>
 	</div>
-
-<div><!--row-->
-</div><!--container-->
-
+<div><!--　row　-->
+	<br>
+</div><!--　container　-->
 </body>
 </html>
