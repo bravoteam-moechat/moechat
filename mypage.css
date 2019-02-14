@@ -8,7 +8,7 @@
 	margin : 10;
 	padding : 10;
 	border:solid 0px;
-	border : dotted 1px #FF6600;/*ガイドライン*/
+	/*border : dotted 1px #FF6600;/*ガイドライン*/
 }
 
 .align-right {/*右寄せ*/
@@ -51,6 +51,9 @@ th,td {
 }
 
 img {/*画像の角をまるく*/
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
+button{
+	border-radius: 20px;
+}

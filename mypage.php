@@ -83,9 +83,11 @@ foreach ($result as $row) {
 </div><!--container1-->
 <div class="container" style="padding-left: 180px;">
 		<div class="box3">
-			<button type="reset" border="0">
-				<IMG src="mypage_image/camera_icon.png"/>
-			</button>
+			<iframe flameborder="0" style="position: static; display: inline-block; width: 520px; height:600px; padding: 0px; border:none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;">
+				<button type="reset" border="0">
+					<IMG src="mypage_image/camera_icon.png"/>
+				</button>
+			</iframe>
 		</div>
 		<div class="box4">
 			<table>
