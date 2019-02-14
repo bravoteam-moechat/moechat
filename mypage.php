@@ -77,7 +77,9 @@ foreach ($result as $row) {
 			</a>
 		</div>
 		<div class="box2">
-				<a href="index.html">ログアウト<?php $ID = null;?></a>
+				<a href="index.html">
+				<IMG src="mypage_image/logout.png" alt="メインページへ" width="100px" onclick="<?php $ID = null;?>"/>
+			</a>
 		</div>
 
 </div><!--container1-->

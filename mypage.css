@@ -30,6 +30,7 @@
 
 .box3 {
   float: left;
+  border-radius: 20px;
 }
 
 .box4 {
@@ -57,9 +58,6 @@ th,td {
 	text-align : center;
 }
 
-img {/*画像の角をまるく*/
-    border-radius: 20px;
-}
 
 button{
 	border-radius: 20px;
