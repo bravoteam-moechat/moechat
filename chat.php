@@ -1,12 +1,15 @@
 <?php
 session_start();
 $_SESSION['user_id'] = "マイトガイ";
+require_once('chat_db_function.php')
 ?>
 
 <!DOCTYPE html5>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/chat.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/chat.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <meta charset="utf-8">
   <title>チャット</title>
 </head>
@@ -22,7 +25,15 @@ $_SESSION['user_id'] = "マイトガイ";
 </form>
 </body>
 <div class="chat_main">
-
+    <script type="text/javascript">
+        var fun = function get_boardDB_php() {
+            var adapter = ADP.createAdapter("chat_db_function.php");
+            adapter.exec("get_boardDB");
+            alert(Date.now());
+        }
+        //関数hyoji()を1000ミリ秒間隔で呼び出す
+        setInterval("fun",1000);
+    </script>
 <?php
     //投稿内容取得＆表示
     get_boardDB();
@@ -50,75 +61,3 @@ $_SESSION['user_id'] = "マイトガイ";
 
 </div>
 </html>
-
-<?php
-////////////////以下function
-// DBからデータ(投稿内容)を取得
-function get_boardDB(){
-    $stmt = select();
-    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
-        // 投稿内容を表示
-        //自分の投稿と他人の投稿を出し分けしたい
-        if($message['name'] == $_SESSION['user_id']){
-            echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
-        } else {
-            echo "<div id=\"other_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
-        }
-    }
-}
-
-// DB接続
-function connectDB() {
-    $dsn = 'mysql:host=mysql1.php.xdomain.ne.jp;dbname=uehararyuma_dbfirst';
-    $user = 'uehararyuma_1';
-    $password = '5626jmaM';
-    $dbh = new PDO($dsn,$user,$password);
-    return $dbh;
-}
-
-// DBから投稿内容を取得
-function select() {
-    $dbh = connectDB();
-    $sql = "SELECT * FROM message ORDER BY time";
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute();
-    return $stmt;
-}
-
-// DBから投稿内容を取得(最新の1件)
-function select_new() {
-    $dbh = connectDB();
-    $sql = "SELECT * FROM message ORDER BY time desc limit 1";
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute();
-    echo'最新の投稿=>';
-    return $stmt;
-}
-
-// DBから投稿内容を登録
-function insert() {
-    $dbh = connectDB();
-    $sql = "INSERT INTO message (id,name, message, time) VALUES (null,:name, :message, now())";
-    $stmt = $dbh->prepare($sql);
-    $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message']);
-    if($stmt->execute($params)){
-        /*
-        postなら処理を実行する
-            old =>このページにgetでリダイレクトする
-            new =>REQUEST_METHODをGETに変える
-        F5更新時の二重投稿対策
-        */
-        if($_SERVER['REQUEST_METHOD']==='POST'){
-            /*
-            $this_url = 'http://uehararyuma.php.xdomain.jp/chat/chat.php';
-            header($this_url);
-            */
-            /*
-            $_SERVER['REQUEST_METHOD'] == 'GET';
-            */
-        }
-    } else {
-        echo'テストメッセージ：失敗<br>';
-    }
-}
-?>
