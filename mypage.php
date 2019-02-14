@@ -73,7 +73,7 @@ foreach ($result as $row) {
 
 		<div class="box1">
 			<a href="main.html">
-				<IMG src="mypage_image/logo.png" alt="メインページへ" width="70px" height="60px"/>
+				<IMG src="mypage_image/logo.png" alt="メインページへ" width="80px" height="70px"/>
 			</a>
 		</div>
 		<div class="box2">
@@ -137,6 +137,8 @@ foreach ($result as $row) {
 		</div>
 </div><!--container2-->
 </form>
-
+<footer>
+	<p>&copy; 2019 team Blavo Inc.</p>
+</footer>
 </body>
 </html>
