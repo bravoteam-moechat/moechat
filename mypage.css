@@ -21,6 +21,7 @@
 
 .box1 {
   float: left;
+  margin-left : 40px;
 }
 
 .box2 {
@@ -54,11 +55,16 @@ th,td {
 }
 
 .container {
-	margin : 20px 0 20px 0;
+	margin : 20px 0 0 0;
 	text-align : center;
 }
 
 
 button{
 	border-radius: 20px;
+}
+
+footer {
+	margin-top:80px;
+	text-align : center;
 }
