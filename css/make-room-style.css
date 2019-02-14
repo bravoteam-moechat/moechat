@@ -1,9 +1,14 @@
 @import url(sanitize.css);
 
+.jumbotron {
+	background:url(../mypage_image/back_A.png) center no-repeat;
+	background-size: cover;
+}
+
 .container {
 	font-size: 18px;
-	background-color: rgb(50, 230, 170);
- 	background-size: cover;
+	/*background-color: rgb(50, 230, 170);*/
+ 	/*background-size: cover;*/
  	background-attachment: fixed;
     background-position: center center;
     /*margin: 90px;*/
