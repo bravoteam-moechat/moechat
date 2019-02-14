@@ -1,96 +1,63 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$_SESSION['user_id'] = "マイトガイ";
+require_once('chat_db_function.php')
+?>
+
+<!DOCTYPE html5>
 <html lang="ja">
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/chat.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <meta charset="utf-8">
   <title>チャット</title>
 </head>
- 
+
 <body>
-     
 <h1>チャット</h1>
 
 <form method="post" action="chat.php">
-        名前　　　　<input type="text" name="name">
-        メッセージ　<input type="text" name="message">
- 
-        <button name="send" type="submit">送信</button>
- 
-        チャット履歴
-    </form>
- 
- 
- 
+    <div>名前<input type="text" name="name"></div>
+    <div>メッセージ<input type="text" name="message"></div>
+    <div><button name="send" type="submit">送信</button></div>
+    <div id="chat">チャット履歴</div>
+</form>
 </body>
-<section>
+<div class="chat_main">
+    <script type="text/javascript">
+        var fun = function get_boardDB_php() {
+            var adapter = ADP.createAdapter("chat_db_function.php");
+            adapter.exec("get_boardDB");
+            alert(Date.now());
+        }
+        //関数hyoji()を1000ミリ秒間隔で呼び出す
+        setInterval("fun",1000);
+    </script>
 <?php
-            // DBからデータ(投稿内容)を取得 
-            $stmt = select(); foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
-                // 投稿内容を表示
-                echo'main0';
+    //投稿内容取得＆表示
+    get_boardDB();
 
-                echo $message['time'],"：　",$message['name'],"：",$message['message'];
-                echo nl2br("\n");
-            }
- 
-            // 投稿内容を登録
-            if(isset($_POST["send"])) {
-                echo'$post[send]はとれてる';
-                insert();
-                // 投稿した内容を表示
-                $stmt = select_new();
-                foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
-                    
-                    echo $message['time'],"：　",$message['name'],"：",$message['message'];
-                    echo nl2br("\n");
-                }
+    // 投稿内容を登録
+    if(isset($_POST["send"])) {
+        $_SERVER['REQUEST_METHOD'] == 'GET';
+        insert();
+        /*
+        // 投稿した内容を表示
+        $stmt = select_new();
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
+            //自分の投稿と他人の投稿を出し分けしたい
+            if($message['name'] == $_SESSION['user_id']){
+                echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
             } else {
-                echo'投稿失敗';
+                echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
             }
- 
-            // DB接続
-            function connectDB() {
-                $dsn = 'mysql:host=mysql1.php.xdomain.ne.jp;dbname=uehararyuma_dbfirst';
-                $user = 'uehararyuma_1';
-                $password = '5626jmaM';
-                $dbh = new PDO($dsn,$user,$password);
-                return $dbh;
-            }
- 
-            // DBから投稿内容を取得
-            function select() {
-                $dbh = connectDB();
-                $sql = "SELECT * FROM message ORDER BY time";
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute();
-                echo'select';
-                return $stmt;
-            }
- 
-            // DBから投稿内容を取得(最新の1件)
-            function select_new() {
-                $dbh = connectDB();
-                $sql = "SELECT * FROM message ORDER BY time desc limit 1";
-                $stmt = $dbh->prepare($sql);
-                $stmt->execute();
-                echo'select_new';
-                return $stmt;
-            }
- 
-            // DBから投稿内容を登録
-            function insert() {
-                echo "insertにはいったよ<br>";
-                $dbh = connectDB();
-                $sql = "INSERT INTO message (id,name, message, time) VALUES (null,:name, :message, now())";
-                $stmt = $dbh->prepare($sql);
-                var_dump($sql);
-                $params = array(':name'=>$_POST['name'], ':message'=>$_POST['message']);
-                if($stmt->execute($params)){
-                    echo'seikou<br>';
-                } else {
-                    echo'sippai<br>';
-                }
-
-            }
+        }
+        */
+    } else {
+        echo'投稿失敗<br>';
+    }
 ?>
-</section>
+
+</div>
 </html>
