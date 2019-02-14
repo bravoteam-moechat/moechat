@@ -29,7 +29,7 @@ require_once('mysql_connect.php');
 $pdo = connectDB();
 $ID = $_SESSION['user_id'];
 
-mysql_set_charset('utf8');
+//mysql_set_charset('utf8');
 
 $name;
 $username;
@@ -38,11 +38,11 @@ $sex;
 $birthbay;
 $point;
 
-
 try {
-    $sql = mysql_query("SELECT * FROM moechat WHERE ID = :ID");
-    $sql->bindValue(':ID', $ID, PDO::PARAM_INT);
-    $result = $sql->execute();
+    $query = "SELECT * FROM moechat WHERE ID = :ID";
+    $stmt = $pdo->prepare($query);
+	$stmt->bindParam(':ID',$ID,PDO::PARAM_INT);
+	$stmt->execute();
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }
