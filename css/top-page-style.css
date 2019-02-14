@@ -1,19 +1,57 @@
 @import url(sanitize.css);
 
-.container {
-	/* background-image: url(".jpg"); */
-	font-size: 18px;
-	background-color: rgb(50, 230, 170);
- 	background-size: cover;
- 	background-attachment: fixed;
+footer {
+	text-align: center; /* 中央に配置 */
+	font-size: 0.8em; /* フォントサイズを小さく */
+	/*bottom: 0; *//* 位置を一番下に */
+	/*width: 100%;*/ /* 幅を画面幅一杯に */
+}
+
+body {
+/*
+  background: url("../mypage_image/back_A.png") center no-repeat;
+  background-position: center center;
+  background-size: auto;
+  color: #fff;
+ */
+}
+
+.jumbotron {
+	background:url("../mypage_image/back_A.png") center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
  	background-position: center center;
+ 	background-color: rgb(50, 230, 170);
+ 	/*color: #fff;*/
+ 	/*margin-top: 150px;*/
+}
+
+/*
+.container1 {
+	background:url("../mypage_image/logo.png") center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+ 	background-position: center center;
+ 	color: #fff;
+ 	height:auto;
+ 	width:auto;
+}
+*/
+
+.container {
+	font-size: 18px;
+	/* イメージカラー:rgb(50, 230, 170) */
+	/*background-color: rgb(50, 230, 170);*/
+ 	/*background-size: cover;*/
     /*margin: 90px;*/
 }
 
+/*
 .content {
 	color: white;
 	font-size: 1.0em;
 }
+*/
 
 h1 {
 	font-size: 2.5em;
@@ -24,12 +62,6 @@ h3 {
 	font-size: 1.0em;
 	text-align: center;
 }
-
-/*
-div {
-		text-align: center;
-}
-*/
 
 .row {
 
@@ -55,17 +87,13 @@ div {
 	/*margin: 10px auto;*/
 }
 
-footer {
-	font-size: 0.8em;
-}
-
 #box {
 
 	text-align: center;
 	background-color: white;
 	margin: 10px auto;
 	padding: auto;
-	/*box-shadow: 0 0 8px rgba(0, 0, 0, .4)*/
+	box-shadow: 0 0 8px rgba(0, 0, 0, .4)
 }
 
 input {
@@ -103,3 +131,15 @@ label {
 p {
 	font-size: 1.1em;
 }
+
+header.jumbotron {
+	background: url("../mypage_image/logo.png") center no-repeat;
+	background-position: center;
+	background-size: auto;
+	color: #fff;
+	padding: 200px;
+}
+
+header .container {
+      margin-top: 10%;
+    }
