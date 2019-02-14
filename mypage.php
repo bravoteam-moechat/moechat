@@ -29,7 +29,7 @@ require_once('mysql_connect.php');
 $pdo = connectDB();
 $ID = $_SESSION['user_id'];
 
-//mysql_set_charset('utf8');
+mysql_set_charset('utf8');
 
 $name;
 $username;
