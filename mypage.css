@@ -1,4 +1,4 @@
-@charset "shift_Jis";
+@charset "UTF-8";
 
 * {
 	font-family: 'Noto Sans JP', sans-serif;
@@ -20,33 +20,33 @@
 }
 
 .box1 {
-  float: left;
-  margin-left : 40px;
+	float: left;
+	margin-left : 40px;
 }
 
 .box2 {
-  float: right;
-  margin-top : 10px;
+	float: right;
+	margin-top : 10px;
 }
 
 .box3 {
-  float: left;
-  border-radius: 20px;
+	float: left;
+	border-radius: 20px;
 }
 
 .box4 {
 	background-image: url('./mypage_image/frame.png');
-   background-size: cover;
-  float: right;
-  width:auto;
-margin-top:30px;
+	background-size: cover;
+	float: right;
+	width:545px;
+	margin-top:30px;
 }
 
 table {
 	font-size : 20px;
 	table-layout : auto;
 	border-collapse : collapse;
-	margin : 10px 20px 48px 10px;
+	margin : 20px 20px 48px 20px;
 }
 
 th,td {
@@ -59,9 +59,14 @@ th,td {
 	text-align : center;
 }
 
-
 button{
 	border-radius: 20px;
+	background-color: #00bfff;
+}
+
+input{
+	border-radius: 5px;
+	background-color: #0080FF;
 }
 
 footer {

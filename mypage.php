@@ -73,7 +73,7 @@ foreach ($result as $row) {
 
 		<div class="box1">
 			<a href="main.html">
-				<IMG src="mypage_image/logo.png" alt="メインページへ" width="80px" height="70px"/>
+				<IMG src="mypage_image/logo.png" alt="メインページへ" width="90px" height="70px"/>
 			</a>
 		</div>
 		<div class="box2">
