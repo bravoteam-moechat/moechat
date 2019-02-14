@@ -1,12 +1,22 @@
 @import url(sanitize.css);
 
+.jumbotron {
+	background:url(../mypage_image/back_A.png) center no-repeat;
+	background-size: cover;
+}
+
 .container {
 	font-size: 18px;
-	background-color: #486d46;
- 	background-size: cover;
+	/*background-color: rgb(50, 230, 170);*/
+ 	/*background-size: cover;*/
  	background-attachment: fixed;
     background-position: center center;
-    margin: 100px;
+    /*margin: 90px;*/
+}
+
+.content {
+	color: white;
+	font-size: 1.0em;
 }
 
 h1 {
@@ -15,18 +25,13 @@ h1 {
 }
 
 h3 {
+	font-size: 1.0em;
 	text-align: center;
 }
 
-/*;
-div {
-		text-align: center;
-}
-*/
-
-.content {
+.row {
 	background-color: rgb(225, 225 ,225, 0.55);
-	width: 555px;
+	width: auto;
 	margin: 30px auto;
 	border: 5px solid #d1d1d1;
 	padding: 50px;
@@ -43,18 +48,19 @@ div {
 }
 
 .control3 {
-	background-color: white;
+	background-color: gray;
 	/*margin: 10px auto;*/
 }
 
 #box {
 	text-align: center;
-	background-color: white;
-	margin: 10px auto;
 	padding: auto;
+	background-color: rgb(225, 225 ,225, 0.55);
+	width: auto;
+	margin: 10px auto;
+	border: 5px solid #d1d1d1;
+	/*padding: 50px;*/
 }
-
-
 
 input {
 	border-bottom: 3px solid #d1d1d1;
