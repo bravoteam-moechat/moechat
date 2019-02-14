@@ -4,11 +4,10 @@
 	font-family: 'Noto Sans JP', sans-serif;
 	font-size : 20px;
 	font-weight : bold;
-	color : #00FF00;
+	color : white;
 	margin : 10;
 	padding : 10;
 	border:solid 0px;
-	background-image: url("./mypage_image/back_A.png");
 	/*border : dotted 1px #FF6600;/*ガイドライン*/
 }
 
@@ -54,6 +53,4 @@ th,td {
 img {/*画像の角をまるく*/
     border-radius: 10px;
 }
-.box3; .box4 {
-	background-color:green;
-}
+

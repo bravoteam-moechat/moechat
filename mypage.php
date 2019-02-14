@@ -64,7 +64,7 @@ foreach ($result as $row) {
 
 		<div class="box1">
 			<a href="main.html">
-				<IMG src="mypage_image/logo.png" alt="メインページへ" width="70px" height="60px">
+				<IMG src="mypage_image/logo.png" alt="メインページへ" width="70px" height="60px"/>
 			</a>
 		</div>
 		<div class="box2">
@@ -75,7 +75,7 @@ foreach ($result as $row) {
 <div class="container" style="padding-left: 80px;">
 		<div class="box3">
 			<button type="reset" border="0">
-				<IMG src="mypage_image/camera_icon.png">
+				<IMG src="mypage_image/camera_icon.png"/>
 			</button>
 		</div>
 		<div class="box4">
@@ -123,7 +123,7 @@ foreach ($result as $row) {
 			</table>
 		</div>
 </div><!--container2-->
-
+</form>
 
 </body>
 </html>
