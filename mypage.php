@@ -59,7 +59,16 @@ foreach ($result as $row) {
 ?>
 
 <form action="のちほど" method="post">
-
+<SCRIPT language="JavaScript">
+     <!--
+       function msgdsp() {
+           alert("登録修正します");
+       }
+       function moneydsp() {
+           alert("課金すると幸せになります");
+       }
+     // -->
+</SCRIPT>
 <div class="container">
 
 		<div class="box1">
@@ -72,7 +81,7 @@ foreach ($result as $row) {
 		</div>
 
 </div><!--container1-->
-<div class="container" style="padding-left: 80px;">
+<div class="container" style="padding-left: 180px;">
 		<div class="box3">
 			<button type="reset" border="0">
 				<IMG src="mypage_image/camera_icon.png"/>
@@ -88,21 +97,21 @@ foreach ($result as $row) {
 					<td>名前</td>
 						<td><?php print($name);?></td>
 					<td>
-						<input type='submit' value='変更'>
+						<input type='submit' value='変更' onclick="msgdsp()">
 					</td>
 				</tr>
 				<tr>
 					<th>ユーザー名</th>
 						<td><?php print($name);?></td>
 					<td>
-						<input type='submit' value='変更'>
+						<input type='submit' value='変更' onclick="msgdsp()">
 					</td>
 				</tr>
 				<tr>
 					<td>PASS</td>
 						<td><?php print($username);?></td>
 					<td>
-						<input type="button" onclick= "location.href='リンク先url'" value="変更">
+						<input type="button" value="変更" onclick="msgdsp()">
 					</td>
 				</tr>
 				<tr>
@@ -117,7 +126,7 @@ foreach ($result as $row) {
 					<td>ポイント</td>
 					<td><?php print($point);?></td>
 					<td>
-						<input type="button" onclick= "location.href='リンク先url'" value="課金">
+						<input type="button" value="課金" onclick="moneydsp()">
 					</td>
 				</tr>
 			</table>
