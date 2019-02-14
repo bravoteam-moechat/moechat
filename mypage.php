@@ -113,7 +113,7 @@ foreach ($result as $row) {
 				</tr>
 				<tr>
 					<td>PASS</td>
-						<td><?php print($username);?></td>
+						<td><input type='submit' value = <?php print($username);?> ></td>
 					<td>
 						<input type="button" value="変更" onclick="msgdsp()">
 					</td>
