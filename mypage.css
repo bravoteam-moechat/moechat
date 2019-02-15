@@ -32,13 +32,15 @@
 .box3 {
 	float: left;
 	border-radius: 20px;
+        height : 500px;
 }
 
 .box4 {
 	background-image: url('./mypage_image/frame.png');
 	background-size: cover;
 	float: right;
-	width:545px;
+	width:562px;
+        height : 372px;
 	margin-top:30px;
 }
 

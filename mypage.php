@@ -14,10 +14,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="mypage.css">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+body {
+background-image: url(./mypage_image/back_A.png);
+}
 </style>
 </head>
 
@@ -25,37 +27,39 @@
 
 <?php
 
-require_once('mysql_connect.php');
+require_once('mc_mysql_connect.php');
 $pdo = connectDB();
-$ID = $_SESSION['user_id'];
 
 //mysql_set_charset('utf8');
 
+$id = $_SESSION['user_id'];
 $name;
 $username;
 $pass;
 $sex;
-$birthbay;
+$birthday;
 $point;
 
+$pass_mask = str_pad("*********", strlen($pass), "*");
+
 try {
-    $query = "SELECT * FROM moechat WHERE ID = :ID";
+    $query = "SELECT * FROM moechat WHERE ID = 1";
     $stmt = $pdo->prepare($query);
-	$stmt->bindParam(':ID',$ID,PDO::PARAM_INT);
 	$stmt->execute();
+   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }
 
-foreach ($result as $row) {
-    //配列に入れる
+foreach ($result as $row){
+        $id = $row['id'];
         $name = $row['name'];
         $username = $row['username'];
         $pass = $row['pass'];
         $sex = $row['sex'];
-        $birthbay = $row['birthbay'];
+        $birthday = $row['birthday'];
         $point = $row['point'];
-    }
+}
 ?>
 
 <form action="のちほど" method="post">
@@ -78,42 +82,40 @@ foreach ($result as $row) {
 		</div>
 		<div class="box2">
 				<a href="index.html">
-				<IMG src="mypage_image/logout.png" alt="メインページへ" width="100px" onclick="<?php $ID = null;?>"/>
+				<IMG src="mypage_image/logout.png" alt="メインページへ" width="100px" />
 			</a>
 		</div>
 
 </div><!--container1-->
 <div class="container" style="padding-left: 180px;">
 		<div class="box3">
-			<iframe flameborder="0" style="position: static; display: inline-block; width: 520px; height:600px; padding: 0px; border:none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;">
-				<button type="reset" border="0">
-					<IMG src="mypage_image/camera_icon.png"/>
-				</button>
-			</iframe>
+			<button type="reset" >
+				<IMG src="mypage_image/camera_icon.png"/>
+			</button>
 		</div>
 		<div class="box4">
 			<table>
 				<tr>
 					<td>ID</td>
-					<td><?php print($ID);?></td>
+					<td><?php print($id);?></td>
 				</tr>
 				<tr>
 					<td>名前</td>
-						<td><?php print($name);?></td>
+					<td><?php print($name);?></td>
 					<td>
 						<input type='submit' value='変更' onclick="msgdsp()">
 					</td>
 				</tr>
 				<tr>
 					<th>ユーザー名</th>
-						<td><?php print($name);?></td>
+					<td><?php print($username);?></td>
 					<td>
 						<input type='submit' value='変更' onclick="msgdsp()">
 					</td>
 				</tr>
 				<tr>
 					<td>PASS</td>
-						<td><input type='submit' value = <?php print($username);?> ></td>
+					<td><?php print($pass_mask);?></td>
 					<td>
 						<input type="button" value="変更" onclick="msgdsp()">
 					</td>
