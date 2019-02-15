@@ -1,5 +1,18 @@
 <?php
 //header('Location: chat.php');
+/*
+if (!empty($_POST['get_boardDB'])) {
+	get_boardDB();
+}
+*/
+if (isset($_POST["jqueryid"])) {
+    get_boardDB();
+    echo "aiu";
+    foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
+} else {
+  echo "DBからチャット内容取得失敗しました。";
+  foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
+}
 ////////////////以下function
 // DBからデータ(投稿内容)を取得
 function get_boardDB(){
@@ -39,7 +52,6 @@ function select_new() {
     $sql = "SELECT * FROM message ORDER BY time desc limit 1";
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
-    echo'最新の投稿=>';
     return $stmt;
 }
 
@@ -61,9 +73,10 @@ function insert() {
             $this_url = 'http://uehararyuma.php.xdomain.jp/chat/chat.php';
             header($this_url);
             */
-            /*
-            $_SERVER['REQUEST_METHOD'] == 'GET';
-            */
+            
+            $_SERVER['REQUEST_METHOD'] = 'GET';
+            
+            echo'REQUEST_METHODは'.$_SERVER['REQUEST_METHOD'];
         }
     } else {
         echo'テストメッセージ：失敗<br>';
