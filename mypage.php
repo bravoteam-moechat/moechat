@@ -27,10 +27,9 @@ background-image: url(./mypage_image/back_A.png);
 
 <?php
 
-require_once('mc_mysql_connect.php');
+require_once('mysql_connect.php');
 $pdo = connectDB();
 
-mysql_set_charset('utf8');
 
 $id = $_SESSION['user_id'];
 $name;
@@ -43,9 +42,11 @@ $point;
 $pass_mask = str_pad("*********", strlen($pass), "*");
 
 try {
-    $query = "SELECT * FROM moechat WHERE ID = 1";
+    $query = "SELECT * FROM moechat WHERE ID = :id";
+   // $query ->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt = $pdo->prepare($query);
-	$stmt->execute();
+    $palam = array(':id'=>$id);
+	$stmt->execute($palam);
    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     var_dump($e->getMessage());
@@ -55,7 +56,7 @@ foreach ($result as $row){
         $id = $row['id'];
         $name = $row['name'];
         $username = $row['username'];
-        $pass = $row['pass'];
+        $pass = $row['password'];
         $sex = $row['sex'];
         $birthday = $row['birthday'];
         $point = $row['point'];
