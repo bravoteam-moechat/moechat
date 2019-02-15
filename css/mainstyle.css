@@ -48,6 +48,43 @@ a{
 }
 
 
+.title{
+    margin-left: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* ユーザーブロック */
+.userbrock{
+    margin: 10px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+    border: 10px double #FFFFFF;
+    border-radius: 10px;
+    background-color: #FF9900;
+}
+.userbrock div{
+    margin: 10px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+    border: 10px double #FFFFFF;
+    border-radius: 10px;
+    background-color: #FF9900;
+}
+/* ルーム新規作成ボタン */
+.createroombutton{
+    margin: 10px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+    border: 10px double #FFFFFF;
+    border-radius: 10px;
+    background-color: #FF9900;
+}
+
 
 
 
@@ -58,22 +95,6 @@ a{
     background-color: #6633FF;
     display: inline-block;
 }
-.maincontents{
-    margin: 10px;
-    padding: 0px;
-    width: auto;
-    height: auto;
-    border: 10px double #FFFFFF;
-    border-radius: 10px;
-    background-color: #FF9900;
-}
-.title{
-    margin-left: 10px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 900;
-}
-
 
 /* 検索ブロック */
 .searchbrock{
@@ -100,12 +121,16 @@ a{
     background: url(../img/searchicon.png) left top no-repeat;
 }
 
-
-
-
-
-
-
+/* メインコンテンツ */
+.maincontents{
+    margin: 10px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+    border: 10px double #FFFFFF;
+    border-radius: 10px;
+    background-color: #FF9900;
+}
 .roombrock1{
     padding: 10px;
     width: 180px;
