@@ -28,7 +28,6 @@ try{
     $stmt->execute(array($username));
     foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $data){
         $_SESSION['user_id']=$data['id'];
-        echo $_SESSION['user_id'];
     }
     header('Location: main.html');
     exit();
