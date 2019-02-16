@@ -17,6 +17,7 @@
 	</style>
 </head>
 <body>
+<form action="main.html" method="post">
 <div class="jumbotron">
 <div class="container">
 	<div class="content">
@@ -56,7 +57,7 @@
 		</div>
 		<div class="control">
 			<label for="timecode">時間:
-			<input id="timecode" type="time" name="timecode" min="05:00" max="00:00" value="00:00">
+			<input id="timecode" type="time" name="timecode" min="01:00" max="10:00" value="00:00">
 		</div>
 		<div class="control">
 			<label for="passcode">入室パスワード:
@@ -69,12 +70,15 @@
 		<div class="control2">
 			<p>この内容で作成しますか？</p>
 			<button class="btn-lg btn-default" onclick="location.href='./main.html'">戻る</button>
+			
 			<button class="btn-lg btn-success" onclick="location.href='./index.html'">作成</button>
+			<input type="submit" value="送信">
 		</div>
 	</div>
 
 	<div><!--row-->
 </div><!--container-->
 </div><!--jumbotron-->
+</form>
 </body>
 </html>
