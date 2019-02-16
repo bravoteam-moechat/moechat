@@ -6,32 +6,53 @@ if (!empty($_POST['get_boardDB'])) {
 	get_boardDB();
 }
 */
-// 投稿内容を登録
+//////////////////////////
+// セッションに入れておいたトークンを取得
+/*
+$session_token = isset($_SESSION['token']) ? $_SESSION['token'] : '';
+// POSTの値からトークンを取得
+$token = isset($_POST['token']) ? $_POST['token'] : '';
+
+// セッションに入れたトークンとPOSTされたトークンの比較
+if ($token == $session_token) {
+    insert();
+} else {
+    echo'二重投稿';
+    echo '$token'.$token;
+    echo '$session_token'.$session_token;
+}
+unset($_SESSION['token']);
+*/
+////////////////////////////
+///////////////////////////
+//名前と文で二重投稿を判断する方法(最新の投稿と比較)
+
+$stmt = select_new();
+foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
+    if($message['message']==$_POST['message']&&$message['name']==$_POST['name']){
+//デバッグ用    echo'同一内容の二重投稿は禁止です';
+    } else {
+        insert();
+    }
+}
+////////////////////////////
+// 投稿内容を登録 old
+/*
 if(isset($_POST["send"]) &&$_POST["send"] == "regist") {
     if(select_new() != $_POST['message'] 
     && $_POST['message'] != ""){
 
         insert();
         unset($_POST["send"]);
-        /*
-        // 投稿した内容を表示
-        $stmt = select_new();
-        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
-            //自分の投稿と他人の投稿を出し分けしたい
-            if($message['name'] == $_SESSION['user_id']){
-                echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
-            } else {
-                echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
-            }
-        }
-        */
     }
 } else {
     //投稿時でなければここにくる
-    /*デバッグ用
-    echo'投稿失敗<br>';
-    */
+    //デバッグ用
+    //echo'投稿失敗<br>';
+    
 }
+*/
+
 //jsでの参照時はここに来る
 if (isset($_POST["jqueryid"])) {
     get_boardDB();
@@ -44,7 +65,7 @@ if (isset($_POST["jqueryid"])) {
   */
 }
 
-////////////////以下function
+////////////////以下function/////////////
 // DBからデータ(投稿内容)を取得
 function get_boardDB(){
     $stmt = select();

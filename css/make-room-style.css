@@ -1,5 +1,15 @@
 @import url(sanitize.css);
 
+* {
+	font-family: 'Noto Sans JP', sans-serif; /* フォントを指定 */
+	font-size : 20px;
+	font-weight : bold;
+	color : rgb(20, 20, 20);
+	margin : 10;
+	padding : 10;
+	border: solid 0px;
+}
+
 .jumbotron {
 	background:url(../mypage_image/back_A.png) center no-repeat;
 	background-size: cover;
@@ -7,11 +17,6 @@
 
 .container {
 	font-size: 18px;
-	/*background-color: rgb(50, 230, 170);*/
- 	/*background-size: cover;*/
- 	background-attachment: fixed;
-    background-position: center center;
-    /*margin: 90px;*/
 }
 
 .content {
@@ -19,8 +24,8 @@
 	font-size: 1.0em;
 }
 
-h1 {
-	font-size: 2.0em;
+h2 {
+	font-size: 1.7em;
 	text-align: center;
 }
 
@@ -49,7 +54,6 @@ h3 {
 
 .control3 {
 	background-color: gray;
-	/*margin: 10px auto;*/
 }
 
 #box {
@@ -59,7 +63,6 @@ h3 {
 	width: auto;
 	margin: 10px auto;
 	border: 5px solid #d1d1d1;
-	/*padding: 50px;*/
 }
 
 input {
@@ -78,11 +81,11 @@ button {
 	color: #fff;
 	padding: 16px;
 	border-radius: 22px;
-	box-shadow: 0 0 8px rgba(0, 0, 0, .4)
+	box-shadow: 0 0 8px rgba(0, 0, 0, .4);
 }
 
 label {
-	display: block;
+	display: block; /* 要素をブロックにして改行させる */
 	margin-bottom: .8em;
 
 }

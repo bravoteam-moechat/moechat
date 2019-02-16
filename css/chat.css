@@ -95,3 +95,9 @@ background-color: #99cc00
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
+/*
+サーバーでのみ効く
+*/
+body{
+  background-image: url(../mypage_image/back_A.png)
+}
