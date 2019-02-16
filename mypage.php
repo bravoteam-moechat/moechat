@@ -37,6 +37,7 @@ $pass;
 $sex;
 $birthday;
 $point;
+$img;
 
 //パスワードをマスク
 $pass_mask = str_pad("*********", strlen($pass), "*");
@@ -60,6 +61,7 @@ foreach ($result as $row){
     $sex = $row['sex'];
     $birthday = $row['birthday'];
     $point = $row['point'];
+    $img = $row['img'];
 }
 ?>
 
@@ -94,7 +96,7 @@ foreach ($result as $row){
 <!--右（ログアウト）-->
 	<div class="box2">
 		<a href="index.html">
-			<IMG src="mypage_image/logout.png" alt="メインページへ" width="100px" />
+			<IMG src="mypage_image/logout.png" alt="ログアウト" width="100px" onclick=<?php session_destroy();?>/>
 		</a>
 	</div>
 
@@ -106,7 +108,10 @@ foreach ($result as $row){
 	<!--左（アイコン画像）-->
 	<div class="box3">
 		<button type="reset" >
-			<IMG src="mypage_image/camera_icon.png"/>
+			<?php
+				echo '<img src=mypage_image/$img; height="500" width="300" alt="ユーザーアイコン" >';
+				?>
+<!-- 			<IMG src="mypage_image/camera_icon.png"/> -->
 		</button>
 	</div>
 
