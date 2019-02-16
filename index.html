@@ -15,42 +15,37 @@
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 	<style>
 	@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
-	/*
-	body {
-		  background: url("../mypage_image/logo.png") center no-repeat;
-	      background-position: center center;
-	      background-size: auto;
-	      color: #fff;
-	}
-	*
-	/
+
 	</style>
 </head>
 <body>
 
-<div class="jumbotron">
+<div class="jumbotron"><!-- 壁紙を画面端まで表示 -->
 <div class="container">
 	<div class="content">
 	<a href="main.html">
-			<img src="mypage_image/logo.png" alt="メインページへ" width="270px" height="130px"/>
+			<img src="mypage_image/logo.png" alt="メインページへ" width="270px" height="130px"/><!-- もえちゃっとロゴ -->
 	</a>
 </div>
 	<div class="row">
-	<div class="col-md-6">
-			<p>アカウントをお持ちの方</p>
-			<form action="login.php" method="post">
-		<div class="control">
-			<label for="myid">ユーザーID:
-				<span class="required">必須</span></label>
-			<input id="myid" type="id" name="username" value="" placeholder="ユーザー名">
-		</div>
-		<div class="control">
-			<label for="passcode">パスワード:
-				<span class="required">必須</span></label>
-			<input id="passcode" type="password" name="passcode" value="">
-		</div>
-		<div class="control2">
-			<button class=" btn-lg btn-success" type="submit">ログイン</button>
+	<div class="col-md-6"><!-- middle画面幅(992~1119px)を下回ると横並び2列に -->
+		<p>アカウントをお持ちの方</p>
+		<form action="login.php" method="post">
+			<div class="control">
+				<label for="myid">ユーザーID:
+					<span class="required">必須</span></label>
+				<input id="myid" type="id" name="username" value="" placeholder="ユーザー名">
+			</div>
+			<div class="control">
+				<label for="passcode">パスワード:
+					<span class="required">必須</span></label>
+				<input id="passcode" type="password" name="password" value="">
+			</div>
+			<div class="control2">
+				<button class=" btn-lg btn-success" type="submit">ログイン</button>
+	        </div>
+        </form>
+        <div>
 			<br>
 			<button class="btn-lg btn-link btn-block" onclick="location.href='https://www.nintendo.co.jp/n02/dmg/index.html'">18歳未満の方はこちら</button>
 		</div>
@@ -69,10 +64,7 @@
 			<br>
 		</div>
 		</div>
-			
 	</div>
-<div><!-- row -->
-</div><!--container-->
 </div><!--jumbotron-->
 
 <script type = "text/javascript">
