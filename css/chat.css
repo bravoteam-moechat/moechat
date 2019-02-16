@@ -1,4 +1,97 @@
+/*
 #other_post {
 color: #000000;
 background-color: #99cc00
+}
+*/
+
+/*以下、①背景色など*/
+/*line.bc*/
+.chat_main {
+  padding: 20px 10px;
+  max-width: 450px;
+  margin: 15px auto;
+  text-align: right;
+  font-size: 14px;
+  background: #7da4cd;
+
+}
+
+/*以下、②左側のコメント*/
+.balloon6 {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.balloon6 .faceicon {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.balloon6 .faceicon img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.balloon6 .chatting {
+  width: 100%;
+  text-align: left;
+}
+/*.says*/
+#other_post {
+  display: inline-block;
+  position: relative; 
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+/*.says*/
+#other_post:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -ms-transform: rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+#other_post p {
+  margin: 0;
+  padding: 0;
+}
+
+/*以下、③右側の緑コメント*/
+/*.mycomment*/
+#self_post {
+  margin: 10px 0;
+}
+/*.mycomment*/
+#self_post p {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px:
+}
+/*.mycomment*/
+#self_post p:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -ms-transform: rotate(-35deg);
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
 }
