@@ -23,7 +23,14 @@ if (!isset($row['username'])) {
 //パスワード確認後sessionにメールアドレスを渡す
 if($_POST['password'] == $row['password']){
   $_SESSION['user_id']=$row['id'];
+  $_SESSION['user_icon']=$row['id'];;
+  $_SESSION['user_name']=$row['id'];;
+  $_SESSION['mypage_url']=$row['id'];;
   header('Location: main.html');
+
+  require_once('session.php');
+  $pdo = sessionSave();
+
     exit();
 } else {
   echo "<script>alert('ユーザーネーム又はパスワードが間違っています。');</script>";

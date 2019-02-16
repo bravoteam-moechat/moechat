@@ -5,9 +5,9 @@ session_start();
 //$_SESSION['username'] = 'hamuko';
 //echo $_SESSION['username'];
 //ユーザー情報
-$user_usericon_url = 'http://www.geocities.jp/masatohappys/kumotennsi/hamugaku.png';
-$user_username = 'ハムちゃん';
-$user_userid = '@hamuchan86';
+$user_usericon_url = $_SESSION['user_icon'];
+$user_username = $_SESSION['user_name'];
+$user_userid = $_SESSION['user_id'];
 $user_mypage_url = 'mypage.php';
 ?>
 
