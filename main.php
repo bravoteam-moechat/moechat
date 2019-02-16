@@ -17,16 +17,11 @@ $user_mypage_url = 'mypage.php';
 	//URLからGETパラメータを取得
     if(isset($_GET['keyword'])){
         $keyword = $_GET['keyword'];
-        if(isset($_GET['offset'])){
-            $offset = $_GET['offset'];
-        } else {
-            $offset = 0;
-        }
         try {
                 //データベースに接続
                 $pdo = connectDB();//外部ファイルのメソッド
                 //SQL文を用意(roomテーブルから、検索ワードと一致するチャットルーム情報を取得する)
-                $sql = "SELECT * FROM room WHERE title like '%:keyword%' OR name like '%:keyword%' LIMIT 5 OFFSET :offset";
+                $sql = "SELECT * FROM room WHERE title like '%:keyword%' OR name like '%:keyword%'";
                 //SQL文をいったんpStmtクラス変数に入れる
                 $pStmt = $pdo->prepare($sql);
                 //変数に値を入れてSQLを実行
@@ -56,7 +51,7 @@ $user_mypage_url = 'mypage.php';
                 //データベースに接続
                 $pdo = connectDB();//外部ファイルのメソッド
                 //SQL文を用意(roomテーブルから、検索ワードと一致するチャットルーム情報を取得する)
-                $sql = "SELECT * FROM room LIMIT 5 OFFSET 0";
+                $sql = "SELECT * FROM room";
                 //SQL文をいったんpStmtクラス変数に入れる
                 $pStmt = $pdo->prepare($sql);
                 //SQLを実行
