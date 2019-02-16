@@ -12,12 +12,27 @@
 a{
     text-decoration: none;
 }
+body{
+    background:url("../mypage_image/back_A.png") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: rgb(50, 230, 170);
+}
 
 /* ヘッダーブロック */
 .headerbrock{
     width: auto;
     height: 100px;
-    background-color: #000080;
+    background:url("../mypage_image/back_B.png") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: rgb(50, 230, 170);
+}
+
+.logo{
+    height: 100px;
 }
 
 /* 親親 */
@@ -25,19 +40,17 @@ a{
     padding: 0px 0px 0px calc((100% - 1000px) /2);
     width: 100%;
     height: 100px;
-    background-color: #FF99CC;
 }
 /* 親 */
 .supermainbrock{
     width: 1000px;
-    height: 1000px;
-    background-color: #FF99FF;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 /* サイドブロック */
 .sidebrock{
     width: 200px;
-    height: 200px;
-    background-color: #008080;
+    height: auto;
     display: inline-block;
 }
 .usericon{
@@ -82,7 +95,7 @@ a{
     height: auto;
     border: 10px double #FFFFFF;
     border-radius: 10px;
-    background-color: #FF9900;
+    background-color: #FF0000;
 }
 
 
@@ -91,15 +104,14 @@ a{
 /* メインブロック */
 .mainbrock{
     width: 800px;
-    height: 1000px;
-    background-color: #6633FF;
+    height: auto;
     display: inline-block;
 }
 
 /* 検索ブロック */
 .searchbrock{
     padding: 10px;
-    background-color: #FF33FF;
+    background-color: #FF9900;
 }
 /* 検索バー */
 .searchbar{
@@ -134,12 +146,15 @@ a{
 .roombrock1{
     padding: 10px;
     width: 180px;
-    background-color: #339933;
+    background-color: #FF9900;
     display: inline-block;
 }
 .roombrock2{
-    width: 500px;
-    background-color: #99FF33;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    width: 480px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
     display: inline-block;
 }
 .roomicon{
@@ -149,7 +164,7 @@ a{
 }
 .roomtitle{
     margin: 10px 0px 0px 10px;
-    color: #333333;
+    color: #FF9900;
     font-size: 20px;
     font-weight: 900;
 }
