@@ -10,17 +10,19 @@ $password = $_POST["password"]; //要求されてくるname
 $sex = $_POST["sex"]; //要求されてくる
 // $birthday = $_POST["birthday"]; //要求されてくるname
 // $img = $_POST["img"]; //要求されてくる
+$points = 500;
 
 
 try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-    $stmt = $pdo->prepare("INSERT INTO moechat (name,username,password,sex) VALUES (:name, :username, :password, :sex)");
+    $stmt = $pdo->prepare("INSERT INTO moechat (name,username,password,sex,moe_point) VALUES (:name, :username, :password, :sex, :moe_point)");
     $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':password', $password, PDO::PARAM_STR);
     $stmt->bindValue(':sex', $sex, PDO::PARAM_STR);
+    $stmt->bindValue(':moe_point', $moe_point, PDO::PARAM_INT);
     if($stmt->execute()){
         session_start();
         // $_SESSION['ID'] = ;

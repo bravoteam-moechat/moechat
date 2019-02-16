@@ -29,12 +29,13 @@ h2{
 }
 
 #wrap{
-	background-image: url('../mypage_image/frame.png');
+	background-image: url('../img/frame1.png');
 	background-size: cover;
 	margin: 0px auto;
 	padding: 20px;
 	width:700px;
-	/*border: 1px solid White;*/
+	border: 10px solid White;
+	border-radius:20px;
 	/*background-color: #f0f0f0;*/
 }
 #table-wrap{
@@ -57,4 +58,10 @@ h2{
 	border: 3px solid White;
 	width:106px;
 	border-radius:5px;
+}
+footer {
+	margin-top:200px;
+	text-align: center; /* 中央に配置 */
+	/*font-size: 0.8em;*/ /* フォントサイズを小さく */
+
 }
