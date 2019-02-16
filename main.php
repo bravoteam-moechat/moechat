@@ -1,24 +1,29 @@
+<!-- セッションからユーザー情報を取得 -->
 <?php
-setcookie("name",123);
-
+session_start();
+//@Tips
+//$_SESSION['username'] = 'hamuko';
+//echo $_SESSION['username'];
 //ユーザー情報
 $user_usericon_url = 'http://www.geocities.jp/masatohappys/kumotennsi/hamugaku.png';
 $user_username = 'ハムちゃん';
 $user_userid = '@hamuchan86';
-/*
-//ルーム情報
-$room_count = 5;
-$room_roomurl[]
-$room_hosticon_url[]
-$room_hostname[]
-$room_hostid[]
-$room_hostroom_url[]
-$room_title[]
-$room_comment[]
-$room_video_url[]
+$user_mypage_url = 'mypage.php';
+?>
 
-for($i=0; $i<5; $i++){
-*/
+<!-- (テスト用)SQLを実行して検索結果を表示(テスト用) -->
+<?php
+	for($i=0; $i<5; $i++)
+	{
+    	//ルーム一覧の情報
+		$room_hosticon_url[] = 'http://www.geocities.jp/masatohappys/kumotennsi/hamugaku.png';
+		$room_hostname[] = 'ハムちゃん';
+		$room_hostid[] = '@hamuchan86';
+		$room_hostroom_url[] = 'room.php';
+		$room_roomurl[] = 'mypage.php';
+		$room_title[] = 'ハムの英会話教室';
+		$room_comment[] = 'なんでも教えます。';
+	}
 ?>
 
 <!DOCTYPE html>
@@ -34,89 +39,90 @@ for($i=0; $i<5; $i++){
 
 <body>
 	<div class="headerbrock">
+		<a href="">
+			<img src="mypage_image/logo.png" class="logo">
+		</a>
 		ヘッダーだよ
-<?php
-var_dump($_COOKIE['name']);
-echo '<br>'.$_COOKIE['name'];
-
-session_start();
-$_SESSION['username'] = 'hamuko';
-echo $_SESSION['username'];
-?>
 	</div>
 
-	<div class="hypermainbrock"><!-- 親の親ブロック -->
-		<div class="supermainbrock"><!-- 親ブロック -->
-			<div class="sidebrock"><!-- サイドのブロック -->
-				<div class="userbrock"><!-- メインコンテンツのブロック -->
+	<div class="hypermainbrock"><!-- 0. 親の親ブロック -->
+		<div class="supermainbrock"><!-- 0. 親ブロック -->
+
+			<div class="sidebrock"><!---------- 0. ↓サイドブロック↓ ---------->
+
+				<div class="userbrock"><!-- 1. [ユーザー] -->
 		 			<a class="title">ユーザー</a>
 		 			<?php
-		 				echo '<img src="';
-		 				echo $user_usericon_url;
-		 				echo '" class="usericon">';
-		 				echo '<p>';
-		 				echo $user_username;
-		 				echo '<br>';
-		 				echo $user_userid;
-		 				echo '</p>';
+		 				echo '<img src="'.$user_usericon_url.'" class="usericon">'."\n";
+		 				echo '<p>'.$user_username.'<br>'.$user_userid.'</p>'."\n";
 		 			?>
-		 			<!--<img src="http://www.geocities.jp/masatohappys/kumotennsi/hamugaku.png" class="usericon">
-		 			<p>ハムちゃん<br>@hamuchan86</p>-->
-		 			<a href="mypage.php">
-						<div class="mypagebutton"><!-- Myページボタン -->
+		 			<!-- 1-1. Myページボタン -->
+		 			<?php echo '<a href="'.$user_mypage_url.'">'."\n"; ?>
+						<div class="mypagebutton">
 				 			<p class="title">Myページ</p>
 				 		</div>
 			 		</a>
-		 			<a href="top-page">
-						<div class="logoutbutton"><!-- ログアウトボタン -->
+			 		<!-- 1-2. ログアウトボタン -->
+		 			<a href="top-page.html">
+						<div class="logoutbutton">
 				 			<p class="title">ログアウト</p>
 				 		</div>
 			 		</a>
 		 		</div>
 
-		 		<a href="make-room.html">
-			 		<div class="createroombutton"><!-- ルーム新規作成ボタン -->
+		 		<a href="make-room.html"><!-- 2. [ルーム新規作成] -->
+			 		<div class="createroombutton"><!-- 2-1. ルーム新規作成ボタン -->
 			 			<p class="title">ルーム新規作成</p>
 			 		</div>
 		 		</a>
+
 				サイドだよ
-			</div><!--
-		 --><div class="mainbrock"><!-- メインのブロック -->
-		 		<div class="maincontents"><!-- メインコンテンツのブロック -->
+			</div><!---------- 0. ↑サイドブロック↑ ----------
+		 --><div class="mainbrock"><!---------- 0. ↓メインブロック↓ ---------->
+
+		 		<div class="maincontents"><!-- 1. [ルーム一覧(タイトル)] -->
 		 			<a class="title">ルーム一覧</a>
 		 		</div>
-		 		<div class="maincontents"><!-- メインコンテンツ(検索)のブロック -->
-		 			<div class="searchbrock">
-		 				<form>
+
+		 		<div class="maincontents"><!-- 2. [ルーム一覧表示ブロック] -->
+		 			<div class="searchbrock"><!-- 2-1. 検索バー -->
+		 				<form action="" method="get">
 			 				<div class="searchbar">
-			 					<input type="text" name="seachword" size="30" placeholder="検索" class="searchtext">
+			 					<?php
+			 						if(isset($_GET['keyword'])){
+									    $keyword = $_GET['keyword'];
+									    echo '<input type="text" name="keyword" size="30" placeholder="検索" class="searchtext" value="'.$keyword.'">';
+									} else {
+										echo '<input type="text" name="keyword" size="30" placeholder="検索" class="searchtext">';
+									}
+			 					?>
 			 					<input type="submit" value="" class="searchbutton">
 							</div>
 						</form>
 					</div>
-<?php
-for($i = 0; $i < 5; $i++){
-?>
-			 		<div class="maincontents"><!-- メインコンテンツのブロック -->
-			 			<div class="roombrock1">
-			 				<img src="http://www.geocities.jp/masatohappys/kumotennsi/hamugaku.png" class="roomicon">
-			 				<p>ハムちゃん<br>@hamuchan86</p>
-			 			</div>
-			 			<div class="roombrock2">
-			 				<p class=roomtitle>ハムの英会話教室<p>
-			 				<p>なんでも教えます。</p>
+					<?php for($i=0; $i<5; $i++){ ?>
+				 		<div class="maincontents"><!-- メインコンテンツのブロック -->
+				 			<div class="roombrock1">
+		 						<?php
+		 							echo '<img src="'.$room_hosticon_url[$i].'" class="roomicon">'."\n";
+		 							echo '<p>'.$room_hostname[$i].'<br>'.$room_hostid[$i].'</p>'."\n";
+		 						?>
+				 			</div>
+				 			<div class="roombrock2">
+				 				<?php
+		 							echo '<p class=roomtitle>'.$room_title[$i].'</p>'."\n";
+		 							echo '<p>'.$room_comment[$i].'</p>'."\n";
+		 						?>
 
 <iframe width="280" height="157" src="https://www.youtube.com/embed/yO11hngsKcs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-			 				<a href="room.php">
-			 					<div class="inroombutton">入室する</div>
-			 				</a>
-			 				<div style="height: 10px;"></div>
-			 			</div>
-			 		</div>
-<?php
-}
-?>
+				 				<a href="chat.php">
+				 					<div class="inroombutton">入室する</div>
+				 				</a>
+				 				<div style="height: 10px;"></div>
+				 			</div>
+				 		</div>
+				 	<?php } ?>
 		 			<div style="height: 400px;"></div>
 		 		</div>
 				メインだよ
