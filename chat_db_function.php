@@ -1,18 +1,49 @@
 <?php
+session_start();
 //header('Location: chat.php');
 /*
 if (!empty($_POST['get_boardDB'])) {
 	get_boardDB();
 }
 */
+// 投稿内容を登録
+if(isset($_POST["send"]) &&$_POST["send"] == "regist") {
+    if(select_new() != $_POST['message'] 
+    && $_POST['message'] != ""){
+
+        insert();
+        unset($_POST["send"]);
+        /*
+        // 投稿した内容を表示
+        $stmt = select_new();
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $message) {
+            //自分の投稿と他人の投稿を出し分けしたい
+            if($message['name'] == $_SESSION['user_id']){
+                echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
+            } else {
+                echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
+            }
+        }
+        */
+    }
+} else {
+    //投稿時でなければここにくる
+    /*デバッグ用
+    echo'投稿失敗<br>';
+    */
+}
+//jsでの参照時はここに来る
 if (isset($_POST["jqueryid"])) {
     get_boardDB();
-    echo "aiu";
+    /*デバッグ用
     foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
+    */
 } else {
-  echo "DBからチャット内容取得失敗しました。";
+  /*デバッグ用
   foreach($_POST as $idx => $val){echo "$idx = $val<br>";}
+  */
 }
+
 ////////////////以下function
 // DBからデータ(投稿内容)を取得
 function get_boardDB(){
@@ -21,9 +52,27 @@ function get_boardDB(){
         // 投稿内容を表示
         //自分の投稿と他人の投稿を出し分けしたい
         if($message['name'] == $_SESSION['user_id']){
-            echo "<div id=\"self_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
+        	//自身の投稿
+            echo 
+            "<div id=\"self_post\">
+            <p>",
+            $message['time'],"：",$message['name'],"：",$message['message'],
+            "</p>
+            </div>";
         } else {
-            echo "<div id=\"other_post\">",$message['time'],"：",$message['name'],"：",$message['message'],"</div>";
+        	//他人の投稿
+            echo 
+            "<div class=\"balloon6\">
+            <div class=\"faceicon\"></div>
+            <div class=\"chatting\">
+            <div id=\"other_post\">
+            <p>",
+            $message['time'],"：",$message['name'],"：",$message['message'],
+            "</p>
+            </div>
+            </div>
+            </div>
+            </div>";
         }
     }
 }
@@ -68,6 +117,7 @@ function insert() {
             new =>REQUEST_METHODをGETに変える
         F5更新時の二重投稿対策
         */
+        
         if($_SERVER['REQUEST_METHOD']==='POST'){
             /*
             $this_url = 'http://uehararyuma.php.xdomain.jp/chat/chat.php';
@@ -75,9 +125,11 @@ function insert() {
             */
             
             $_SERVER['REQUEST_METHOD'] = 'GET';
-            
+            /*
             echo'REQUEST_METHODは'.$_SERVER['REQUEST_METHOD'];
+            */
         }
+
     } else {
         echo'テストメッセージ：失敗<br>';
     }
