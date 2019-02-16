@@ -10,7 +10,7 @@ $password = $_POST["password"]; //要求されてくるname
 $sex = $_POST["sex"]; //要求されてくる
 $birthday = $_POST["birthday"]; //要求されてくるname
 // $img = $_POST["img"]; //要求されてくる
-$moe_point ='500';
+$moe_point =500;
 
 
 try{
