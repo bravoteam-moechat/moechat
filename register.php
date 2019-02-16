@@ -32,7 +32,7 @@ try{
     foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $data){
         $_SESSION['user_id']=$data['id'];
     }
-    header('Location: main.html');
+    header('Location: main.php');
     exit();
     }else{
         echo "失敗したよ";
