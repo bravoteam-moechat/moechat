@@ -5,9 +5,9 @@ $hosticonurl = $_SESSION['user_icon'];
 $hostname = $_SESSION['user_name'];
 $hostid = $_SESSION['user_id'];
 $hosturl = $_SESSION['mypage_url'];
-$roomurl = $_POST('POSTの変数名を入れてね');
-$title = $_POST('POSTの変数名を入れてね');
-$comment = $_POST('POSTの変数名を入れてね');
+$roomurl = 'chat.php';
+$title = $_POST['roomtext'];
+$comment = $_POST['comment'];
 
 require_once('mysql_connect.php');//外部ファイルを使う
 try {
