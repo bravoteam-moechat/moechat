@@ -19,27 +19,43 @@ body{
 	margin:50px auto;
 	/*border: 1px solid White;*/
 }
-#text{
-	margin:30px auto;
-	border: 3px solid White;
-	border-radius:5px;
-}
-h2{
-	text-align:center;
+.box1 {
+	float: left;
+	margin: 0 0 10px 10px;
 }
 
+.box2 {
+	float: right;
+	margin: 10px 10px 0 0;
+}
+#text{
+	font-weight: bold;
+	margin:30px auto;
+	border: 5px solid White;
+	border-radius:15px;
+}
+h2{
+	margin-bottom:15px;
+	text-align:center;
+}
+#logo{
+	margin: 0px auto;
+	width:700px;
+}
 #wrap{
-	background-image: url('../mypage_image/frame.png');
+	background-image: url('../img/frame1.png');
 	background-size: cover;
 	margin: 0px auto;
 	padding: 20px;
 	width:700px;
-	/*border: 1px solid White;*/
+	border: 10px solid White;
+	border-radius:40px;
+	clear:both;
 	/*background-color: #f0f0f0;*/
 }
 #table-wrap{
 	margin:0px auto;
-	width:350px;
+	width:400px;
 	/*border: 1px solid White;*/
 }
 .input{
@@ -57,4 +73,10 @@ h2{
 	border: 3px solid White;
 	width:106px;
 	border-radius:5px;
+}
+footer {
+	margin-top:200px;
+	text-align: center; /* 中央に配置 */
+	/*font-size: 0.8em;*/ /* フォントサイズを小さく */
+
 }
