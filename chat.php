@@ -1,10 +1,18 @@
 <?php
 session_start();
-$_SESSION['user_id'] = "マイトガイ";
+////////////////////////
+// トークンを発行する
+$token = md5(uniqid(rand(), true));
+// トークンをセッションに保存
+$_SESSION['token'] = $token;
+//////////////////////////////
+
+
+$_SESSION['user_id'] = "ナルト";
 require_once('chat_db_function.php')
 ?>
 
-<!DOCTYPE html5>
+<!DOCTYPE>
 <html lang="ja">
 <head>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -21,6 +29,7 @@ require_once('chat_db_function.php')
 <h1>チャット</h1>
 
 <form method="post" action="chat.php">
+     <input type="hidden" name="token" value="<?=$token?>">
     <div>名前<input type="text" name="name"></div>
     <div>メッセージ<input type="text" name="message" id="message"></div>
     <div><button id="send" name="send" value="regist" type="submit">送信</button></div>
